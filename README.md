@@ -49,7 +49,7 @@ for i in {0..999}; do dd if=/dev/urandom of=in_file$i.bin bs=10M count=1; echo "
 $( for i in {0..999}; do echo -n "in_file$i.bin|"; done; echo -e "\b " )
 $( for i in {0..999}; do echo -n "out_file$i.bin|"; done; echo -e "\b " )
 
-# Command line checking runtime:
+# Command line to copy:
 ./threadcopy -d -v -i $( for i in {0..999}; do echo -n "in_file$i.bin|"; done; echo -e "\b " ) -o $( for i in {0..999}; do echo -n "out_file$i.bin|"; done; echo -e "\b " )
 
 # File compare, check integrity:
