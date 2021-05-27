@@ -50,7 +50,7 @@ $( for i in {0..999}; do echo -n "in_file$i.bin|"; done; echo -e "\b " )
 $( for i in {0..999}; do echo -n "out_file$i.bin|"; done; echo -e "\b " )
 
 # Command line checking runtime:
-time ./threadcopy -d -v -i $( for i in {0..999}; do echo -n "in_file$i.bin|"; done; echo -e "\b " ) -o $( for i in {0..999}; do echo -n "out_file$i.bin|"; done; echo -e "\b " )
+./threadcopy -d -v -i $( for i in {0..999}; do echo -n "in_file$i.bin|"; done; echo -e "\b " ) -o $( for i in {0..999}; do echo -n "out_file$i.bin|"; done; echo -e "\b " )
 
 # File compare, check integrity:
 for i in {0..999}; do cmp in_file$i.bin out_file$i.bin; echo "^^ Compared file: $i"; done
